@@ -1,0 +1,129 @@
+body{
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+}
+
+.container{
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+h1{
+  margin: 0 0 5px;
+}
+
+.subtitle{
+  margin: 0 0 15px;
+  color: #555;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.card{
+  background: white;
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.card img{
+  width: 50%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card h2{
+  font-size: 16px;
+  margin: 10px 0 5px;
+}
+
+.price{
+  font-weight: bold;
+  margin: 0 0 10px;
+}
+
+button{
+  padding: 8px 12px;
+  border: none;
+  background: orange;
+  cursor: pointer;
+}
+
+button:hover{
+  background: darkorange;
+}
+
+/* адаптивність */
+@media (max-width: 900px){
+  .grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px){
+  .grid{
+    grid-template-columns: 1fr;
+  }
+}
+.buy-btn{
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 16px;
+
+  background: #ff8a00;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+/* ефект наведення */
+.buy-btn:hover{
+  background: #ff9f2a;
+  transform: scale(1.05);
+}
+/* блок з посиланням на магазин */
+.shop-link{
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+/* посилання всередині тексту */
+.shop-link a{
+  color: #222;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+/* при наведенні текст стає оранжевим */
+.shop-link a:hover{
+  color: #ff8a00;
+}
+
+/* оранжева анімація-лінія */
+.shop-link a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #ff8a00;
+  transition: width 0.25s ease;
+}
+
+.shop-link a:hover::after{
+  width: 100%;
+}
